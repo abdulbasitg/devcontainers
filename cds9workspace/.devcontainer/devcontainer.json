@@ -1,0 +1,26 @@
+{
+  "name": "CDS9 Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "runArgs": ["--name=devcontainer-cds9"],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "sapse.vscode-cds",
+        "dbaeumer.vscode-eslint",
+        "humao.rest-client",
+        "qwtel.sqlite-viewer",
+        "mechatroner.rainbow-csv",
+        "sapse.sap-ux-fiori-tools-extension-pack",
+        "github.copilot-chat"
+      ]
+    }
+  },
+  "mounts": [
+    "source=C:/myworkspaces/cds9workspace,target=/workspace,type=bind,consistency=cached"
+  ],  
+  "postCreateCommand": "./.devcontainer/postcreate.sh", 
+  "forwardPorts": [ 4004 ],
+  "remoteUser": "node"
+}

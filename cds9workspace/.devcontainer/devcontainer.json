@@ -17,9 +17,6 @@
       ]
     }
   },
-  "mounts": [
-    "source=C:/myworkspaces/cds9workspace,target=/workspace,type=bind,consistency=cached"
-  ],  
   "postCreateCommand": "./.devcontainer/postcreate.sh", 
   "forwardPorts": [ 4004 ],
   "remoteUser": "node"

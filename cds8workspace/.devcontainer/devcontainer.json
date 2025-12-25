@@ -3,12 +3,8 @@
   "image": "mcr.microsoft.com/vscode/devcontainers/javascript-node:24",
   "runArgs": ["--name=devcontainer-cds8"],  
   "features": {
-    "./cap-tools": {
-      "install_cds_dk": true,
-      "cds_dk_version": "8",
-      "install_mbt": true,
-      "install_cf_cli": true,
-      "install_sqlite3": true
+    "ghcr.io/abdulbasitg/devcontainer-features/cap-tools:latest": {
+      "cds_dk_version": "8"
     }
 	},  
   "customizations": {

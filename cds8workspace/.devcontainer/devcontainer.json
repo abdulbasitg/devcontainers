@@ -1,9 +1,16 @@
 {
   "name": "CDS8 Dev Container",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
-  "runArgs": ["--name=devcontainer-cds8"],
+  "image": "mcr.microsoft.com/vscode/devcontainers/javascript-node:24",
+  "runArgs": ["--name=devcontainer-cds8"],  
+  "features": {
+    "./cap-tools": {
+      "install_cds_dk": true,
+      "cds_dk_version": "8",
+      "install_mbt": true,
+      "install_cf_cli": true,
+      "install_sqlite3": true
+    }
+	},  
   "customizations": {
     "vscode": {
       "extensions": [
@@ -14,10 +21,11 @@
         "mechatroner.rainbow-csv",
         "sapse.sap-ux-fiori-tools-extension-pack",
         "github.copilot-chat"
-      ]
-    }
+      ],
+      "settings": {		    
+        "git.autofetch": true
+      }      
+    }    
   },
-  "postCreateCommand": "./.devcontainer/postcreate.sh", 
-  "forwardPorts": [ 4004 ],
-  "remoteUser": "node"
+  "forwardPorts": [ 4004, 5000 ]
 }
